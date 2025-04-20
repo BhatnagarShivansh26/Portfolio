@@ -1,0 +1,85 @@
+import React from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Github, Linkedin, Download } from "lucide-react";
+import { motion } from "framer-motion";
+
+export default function Portfolio() {
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-white via-green-50 to-yellow-50 p-8 text-gray-800">
+      <header className="text-center mb-10">
+        <motion.h1 
+          className="text-4xl font-bold mb-2 text-green-800"
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+        >
+          Shivansh Bhatnagar
+        </motion.h1>
+        <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+          MSc in Data Analytics | Ex-Rakuten & Toluna | Passionate about AI, Data Science, and Building Scalable Analytical Systems
+        </p>
+        <div className="flex justify-center gap-4 mt-4">
+          <a href="https://github.com/BhatnagarShivansh26" target="_blank">
+            <Github className="h-6 w-6 text-gray-700 hover:text-black" />
+          </a>
+          <a href="https://www.linkedin.com/in/shivansh-bhatnagar-1a28b0142/" target="_blank">
+            <Linkedin className="h-6 w-6 text-blue-600 hover:text-blue-800" />
+          </a>
+          <a href="/Shivansh_CV.pdf" target="_blank" className="flex items-center gap-1 text-green-700 hover:underline">
+            <Download className="w-4 h-4" /> Resume
+          </a>
+        </div>
+      </header>
+
+      <section className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <Card>
+          <CardContent className="p-4">
+            <h2 className="text-xl font-semibold text-green-700 mb-2">Professional Experience</h2>
+            <ul className="list-disc list-inside text-gray-700">
+              <li><strong>Data & Quality Analyst</strong> @ Rakuten Insight (SQL, Tableau, SPSS, Excel)</li>
+              <li><strong>Data Processing Analyst</strong> @ Toluna (SQL, Tableau, SPSS)</li>
+              <li><strong>Intern - Machine Learning</strong> @ Croma Campus (Python, ML Algorithms)</li>
+            </ul>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardContent className="p-4">
+            <h2 className="text-xl font-semibold text-green-700 mb-2">Education</h2>
+            <ul className="list-disc list-inside text-gray-700">
+              <li><strong>MSc in Data Analytics</strong> @ National College of Ireland (2024-2025)</li>
+              <li><strong>B.Tech</strong> @ Inderprastha Engineering College (2017-2021, 71.2%)</li>
+            </ul>
+          </CardContent>
+        </Card>
+      </section>
+
+      <section className="mt-10">
+        <h2 className="text-2xl font-bold text-center text-green-800 mb-6">Projects</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <Card><CardContent className="p-4"><h3 className="font-semibold text-lg text-green-700">Mental Health Monitoring (Thesis)</h3><p className="text-gray-700 text-sm">Used BERT, RoBERTa, and SHAP to detect distress in Reddit posts. Built explainable AI model to provide mental health insights across UK and Ireland.</p></CardContent></Card>
+          <Card><CardContent className="p-4"><h3 className="font-semibold text-lg text-green-700">Delivery Forecasting using LSTM</h3><p className="text-gray-700 text-sm">Forecasted delivery delays with LSTM and optimized routes using Dijkstra’s algorithm. Reduced average delay by 50% on Kaggle logistics dataset.</p></CardContent></Card>
+          <Card><CardContent className="p-4"><h3 className="font-semibold text-lg text-green-700">CRM Optimization for FMCG</h3><p className="text-gray-700 text-sm">Integrated Power BI & Salesforce to enhance OTIF metrics for a consumer brand, resulting in increased retention and supply chain visibility.</p></CardContent></Card>
+          <Card><CardContent className="p-4"><h3 className="font-semibold text-lg text-green-700">Vehicle Damage Classifier</h3><p className="text-gray-700 text-sm">Used CNN (ResNet50 + PyTorch) with image augmentation to classify 6 types of damage for insurance sector automation.</p></CardContent></Card>
+          <Card><CardContent className="p-4"><h3 className="font-semibold text-lg text-green-700">Multidomain ML Analytics</h3><p className="text-gray-700 text-sm">Applied predictive and sentiment models on Airbnb, healthcare and ChatGPT data. Highlighted key business insights with 80%+ accuracy rates.</p></CardContent></Card>
+          <Card><CardContent className="p-4"><h3 className="font-semibold text-lg text-green-700">Air Pollution & Health Analysis</h3><p className="text-gray-700 text-sm">Built interactive dashboard linking pollution and emissions with heart disease trends. Suggested policy changes for sustainable healthcare.</p></CardContent></Card>
+        </div>
+      </section>
+
+      <section className="mt-12 max-w-xl mx-auto">
+        <h2 className="text-xl font-bold text-center text-green-800 mb-4">Contact Me</h2>
+        <form action="https://formspree.io/f/xkndzqyd" method="POST" className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 border border-green-200">
+          <input type="text" name="name" placeholder="Your Name" required className="w-full border p-2 mb-4 rounded" />
+          <input type="email" name="email" placeholder="Your Email" required className="w-full border p-2 mb-4 rounded" />
+          <textarea name="message" rows="4" placeholder="Your Message" required className="w-full border p-2 mb-4 rounded" />
+          <Button className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-full" type="submit">Send Message</Button>
+        </form>
+      </section>
+
+      <footer className="mt-10 text-center text-sm text-gray-500">
+        © 2025 Shivansh Bhatnagar. All rights reserved.
+      </footer>
+    </div>
+  );
+}
